@@ -1,7 +1,7 @@
 package pl.sda.javalondek4.java_demo.lambda.calculator;
 
 @FunctionalInterface
-public interface Subtraction<T> {
+public interface Operation<T> {
 
-    T sub(T a, T b);
+    T operation(T first, T second);
 }
