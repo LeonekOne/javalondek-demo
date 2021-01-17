@@ -6,7 +6,8 @@ public class HelloLambda {
         LeszekRunner leszekRunner = new LeszekRunner();
         leszekRunner.walk();
         Runner runner = new LeszekRunner();
-        runner.go();
+        handleRunner(runner);
+//        runner.walk(); - doesn't compile
 
         Runner annonymousRunner = new Runner() {
             @Override
@@ -15,10 +16,27 @@ public class HelloLambda {
 
             }
         };
-        annonymousRunner.go();
+        handleRunner(annonymousRunner);
 
-
+        // call handleRunner user anonymous class
+        handleRunner(new Runner() {
+            @Override
+            public void go() {
+                System.out.println("inside method call");
+            }
+        }
+        );
 
 
     }
+
+        public static void handleRunner(Runner anyRunner) {
+            System.out.println("calling handleRunner()");
+
+            anyRunner.go();
+        }
+
+
+
+
 }
