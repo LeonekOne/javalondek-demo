@@ -11,6 +11,7 @@ public class ComputerUtils {
         return computer.getGraphicsCard().getModel();
     }
 
+    // To jest kod produkcyjny ale słabszy:
     public static String getGraphicsCardGoodApproach(Computer computer) {
 //        if(computer.getGraphicsCard() == null){
 //            return null;
@@ -36,6 +37,15 @@ public class ComputerUtils {
 
 
 //        String graphicsCard = computer != null : computer.model ? "No"
+    }
+
+
+    // To jest kod produkcyjny ale lepszy:
+    public static String getGCModelWithJava8(Computer computer) {
+        return Optional.ofNullable(computer)
+                .map(comp -> comp.getGraphicsCard())
+                .map(graphicsCard -> graphicsCard.getModel())
+                .orElse("no model");
     }
 
     public static void main(String[] args) {
