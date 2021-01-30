@@ -1,13 +1,14 @@
 package pl.sda.javalondek4.java_demo.optional.java8;
 
 public class ComputerUtils {
+
     private ComputerUtils() {
         throw new UnsupportedOperationException("This class shouldn't be instantiated!!!");
     }
 
 
     public static String getGraphicsCardGoodApproach(Computer computer) {
-        return "";
+        return computer.toString();
     }
 
     public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class ComputerUtils {
         Computer withoutGraphicsCard = new Computer(null);
         Computer withUnknownModel = new Computer(new GraphicsCard(null));
         Computer personalComputer = new Computer(new GraphicsCard("nVidia RTX 380"));
+
         getGraphicsCardGoodApproach(withoutGraphicsCard);
         getGraphicsCardGoodApproach(withUnknownModel);
         getGraphicsCardGoodApproach(personalComputer);
