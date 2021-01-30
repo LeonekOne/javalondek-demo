@@ -45,7 +45,7 @@ public class ComputerUtils {
         return Optional.ofNullable(computer)
                 .map(comp -> comp.getGraphicsCard())
                 .map(graphicsCard -> graphicsCard.getModel())
-                .orElse("no model");
+                .orElse("no model"); //
     }
 
     public static void main(String[] args) {
