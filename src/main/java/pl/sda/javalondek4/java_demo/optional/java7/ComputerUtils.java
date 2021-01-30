@@ -48,6 +48,12 @@ public class ComputerUtils {
                 .orElse("no model"); //
     }
 
+    public static String getGCModelWithJava8WithVar(Computer computer) {
+
+        // FIXME
+        return "";
+    }
+
     public static void main(String[] args) {
         Computer withoutGraphicsCard = new Computer(null);
         Computer withUnknownModel = new Computer(new GraphicsCard(null));
